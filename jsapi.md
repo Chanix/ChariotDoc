@@ -36,7 +36,8 @@ window.addEventListener('ChariotReady', function () {
 
 ## 增加与完善
 
-有需要的话，JSAPI 将会按照不断的进行增加和完善。如果没有您需要的模块，可以在 ISSUE 中提出。
+有需要的话，JSAPI
+将会按照不断的进行增加和完善。如果没有您需要的模块，可以 [在这里提出需求](https://github.com/Chanix/ChariotDoc/issues) 。
 我们将定期整理，判断是否增加，并整理出优先顺序逐步完善。
 
 - 现有 API 缺陷的修复，优先级提高
@@ -48,12 +49,16 @@ window.addEventListener('ChariotReady', function () {
 
 ## 功能模块
 
-| 模块名称      | 功能描述        |        Test Text        |
-|:----------|:------------|:-----------------------:|
-| core      | 基础功能        |   [点击查看](jsapi_core)    |
-| env       | 环境变量        |    [点击查看](jsapi_env)    |
-| clipboard | 剪贴板         | [点击查看](jsapi_clipboard) |
-| mainwin   | 主窗口         |       [点击查看](404)       |
-| memdb     | 内存数据库       |          点击查看           |
-| sqlite3   | sqlite3 数据库 |          点击查看           |
+| 模块名称      | 功能描述 |        Test Text        |
+|:----------|:-----|:-----------------------:|
+| core      | 基础功能 |   [点击查看](jsapi_core)    |
+| env       | 环境变量 |    [点击查看](jsapi_env)    |
+| clipboard | 剪贴板  | [点击查看](jsapi_clipboard) |
+| fsys      | 文件系统 |   [点击查看](jsapi_fsys)    |
+
+[//]: # (| mainwin   | 主窗口         |       [点击查看]&#40;404&#41;       |)
+
+[//]: # (| memdb     | 内存数据库       |          点击查看           |)
+
+[//]: # (| sqlite3   | sqlite3 数据库 |          点击查看           |)
 

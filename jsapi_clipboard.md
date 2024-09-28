@@ -1,54 +1,49 @@
 ---
 layout: doc
 ---
-# JSAPI_CORE
 
-内核基本功能
+# Chariot.clipboard
 
+系统剪贴板
+
+## Chariot.clipboard.is_available {#is_available}
+
+系统剪贴板是否可操作
+
+Chariot.clipboard.is_available()
+
+| 返回值  | 说明         |
+|:----:|:-----------|
+| bool | 系统剪贴板是否可操作 |
+
+```javascript
+await __C.clipboard.is_available();
 ```
-    def get_info(self) -> Dict[str, str]:
-        return {'chariot_home': os.path.dirname(os.path.realpath(sys.argv[0])),
-                'chariot_filename': os.path.basename(sys.argv[0]),
-                'chariot_projects_home': os.path.join(os.path.dirname(os.path.realpath(sys.argv[0])), 'projects'),
-                }
 
-    # 获取命令行参数
-    def get_argv(self) -> List[str]:
-        """获取命令行参数"""
-        return sys.argv
+## Chariot.clipboard.read {#read}
 
-    def get_uuid(self) -> str:
-        """获取 uuid (version 4)"""
-        return str(uuid.uuid4())
+获取系统剪贴板中的值（仅支持字符串）
 
-    def exit(self) -> None:
-        """退出应用"""
-        for win in webview.windows:
-            win.destroy()
+Chariot.clipboard.read()
 
-    def exec(self, bin_name: str, params: str = '') -> int:
-        """运行指定的项目"""
-        return subprocess.Popen([bin_name] + shlex.split(params)).pid
+|  返回值   | 说明       |
+|:------:|:---------|
+| string | 剪贴板中存储的值 |
 
-    def execwait(self, bin_name: str, params: str = '') -> dict:
-        """运行指定的项目"""
-        # 等待命令完成（subprocess.run()会阻塞直到命令完成）
-        cp: CompletedProcess = subprocess.run([bin_name] + shlex.split(params), capture_output=True, text=True)
-        return {'returncode': cp.returncode, 'stdout': cp.stdout, 'stderr': cp.stderr}
+```javascript
+await __C.clipboard.get();
+```
 
-    def run(self, project_id: str, prj_params: str = '') -> int:
-        """运行指定的项目"""
-        cmdline: List[str] = [sys.argv[0]] + [project_id] + shlex.split(prj_params)
-        cmdline = cmdline if commonKit.is_compiled() else [sys.executable] + cmdline
+## Chariot.clipboard.write {#write}
 
-        return subprocess.Popen(cmdline).pid
+设置系统剪贴板的值（仅支持字符串）
 
-    def runwait(self, project_id: str, prj_params: str = '') -> dict:
-        """运行指定的项目"""
-        cmdline: List[str] = [sys.argv[0]] + [project_id] + shlex.split(prj_params)
-        cmdline = cmdline if commonKit.is_compiled() else [sys.executable] + cmdline
+Chariot.clipboard.set(text)
 
-        # 等待命令完成（subprocess.run()会阻塞直到命令完成）
-        cp: CompletedProcess = subprocess.run(cmdline, capture_output=True, text=True)
-        return {'returncode': cp.returncode, 'stdout': cp.stdout, 'stderr': cp.stderr}
+|  参数  | 类型     | 说明                   |
+|:----:|:-------|:---------------------|
+| text | string | 设置系统剪贴板的值，可缺省，默认为 '' | 
+
+```javascript
+await __C.clipboard.write('写入系统剪贴板的字符串值');
 ```
