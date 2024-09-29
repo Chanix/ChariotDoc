@@ -33,14 +33,14 @@ export default defineConfig({
                 items: [
                     {text: '什么是 Chariot', link: '/what-is-chariot'},
                     {text: '快速开始', link: '/getting-started'},
-                    {text: '应用类型', link: '/project-types'},
+                    // {text: '应用类型', link: '/project-types'},
                 ],
             },
             {
                 text: '配置文件',
                 collapsed: false,
                 items: [
-                    {text: 'project.json', link: '/project-json'},
+                    {text: 'project.json', link: '/project_json'},
                     // { text: 'lang.json', link: '/404' },
                 ],
             },
@@ -50,9 +50,10 @@ export default defineConfig({
                 items: [
                     {text: 'JSAPI 概述', link: '/jsapi'},
                     {text: '基础功能 Chariot.core', link: '/jsapi_core'},
-                    {text: '环境变量 Chariot.env', link: '/jsapi_env'},
                     {text: '剪贴板　 Chariot.clipboard', link: '/jsapi_clipboard'},
+                    {text: '环境变量 Chariot.env', link: '/jsapi_env'},
                     {text: '文件系统 Chariot.fsys', link: '/jsapi_fsys'},
+                    {text: '应用项目 Chariot.project', link: '/jsapi_project'},
                 ],
             },
         ],

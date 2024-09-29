@@ -82,16 +82,16 @@ Chariot.env.list()
 env = await __C.env.list()
 ```
 
-## Chariot.env.get_sep {#get_sep}
+## Chariot.env.getsep {#getsep}
 
 获取指定环境变量中使用的分隔符
 
-Chariot.env.get_sep()
+Chariot.env.getsep()
 
 |  返回值   | 说明                      |
 |:------:|:------------------------|
 | string | 环境变量中使用的分隔符，`:` 或者 `;`。 |
 
 ```javascript
-await __C.env.get_env();
+await __C.env.getsep();
 ```

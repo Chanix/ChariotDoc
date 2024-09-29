@@ -20,11 +20,11 @@ Chariot.clipboard.is_available()
 await __C.clipboard.is_available();
 ```
 
-## Chariot.clipboard.read {#read}
+## Chariot.clipboard.get {#get}
 
 获取系统剪贴板中的值（仅支持字符串）
 
-Chariot.clipboard.read()
+Chariot.clipboard.get()
 
 |  返回值   | 说明       |
 |:------:|:---------|
@@ -34,7 +34,7 @@ Chariot.clipboard.read()
 await __C.clipboard.get();
 ```
 
-## Chariot.clipboard.write {#write}
+## Chariot.clipboard.set {#set}
 
 设置系统剪贴板的值（仅支持字符串）
 

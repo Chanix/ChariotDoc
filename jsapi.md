@@ -13,7 +13,7 @@ Chariot 提供了JavaScript 可调用的功能，以此突破浏览器的限制�
 
 ## 调用方法
 
-Chariot 会在浏览器组件窗口装载完成之后新增一个变量： `window.Chariot` 并触发事件 `ChariotReady`。
+Chariot 会在浏览器组件窗口装载完成之后新增一个对象： `window.Chariot` 并触发事件 `ChariotReady`。
 为了方便使用，Chariot 将扩展按功能分成了多个模块，公开于 `window.Chariot.api` 下。
 
 在 JavaScript 中，通过 `window.Chariot.api.<模块名>.<函数名>` 这样的方式来进行调用，可以简写为 `__C.<模块名>.<函数名>` 。
@@ -52,9 +52,10 @@ window.addEventListener('ChariotReady', function () {
 | 模块名称      | 功能描述 |        Test Text        |
 |:----------|:-----|:-----------------------:|
 | core      | 基础功能 |   [点击查看](jsapi_core)    |
-| env       | 环境变量 |    [点击查看](jsapi_env)    |
 | clipboard | 剪贴板  | [点击查看](jsapi_clipboard) |
+| env       | 环境变量 |    [点击查看](jsapi_env)    |
 | fsys      | 文件系统 |   [点击查看](jsapi_fsys)    |
+| project   | 应用项目 |  [点击查看](jsapi_project)  |
 
 [//]: # (| mainwin   | 主窗口         |       [点击查看]&#40;404&#41;       |)
 
