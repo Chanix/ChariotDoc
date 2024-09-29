@@ -53,7 +53,9 @@ await __C.fsys.isdir('C:\\Windows');
 
 ## Chariot.fsys.sizeof {#sizeof}
 
-获取指定文件或者目录的字节数
+获取指定文件或者目录的字节数<br>
+如果是文件，返回文件字节数。如果是目录，将进行递归遍历和汇总。<br />
+***注意：目录很多或包含大量小文件的情况下，会消耗大量 IO 操作。***
 
 Chariot.fsys.sizeof(path)
 
