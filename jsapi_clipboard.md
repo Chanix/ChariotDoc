@@ -2,15 +2,11 @@
 layout: doc
 ---
 
-# Chariot.clipboard
+# 剪贴板 Chariot.clipboard
 
-系统剪贴板
-
-## Chariot.clipboard.is_available {#is_available}
+## Chariot.clipboard.is_available() {#is_available}
 
 系统剪贴板是否可操作
-
-Chariot.clipboard.is_available()
 
 | 返回值  | 说明         |
 |:----:|:-----------|
@@ -20,11 +16,9 @@ Chariot.clipboard.is_available()
 await __C.clipboard.is_available();
 ```
 
-## Chariot.clipboard.get {#get}
+## Chariot.clipboard.get() {#get}
 
 获取系统剪贴板中的值（仅支持字符串）
-
-Chariot.clipboard.get()
 
 |  返回值   | 说明       |
 |:------:|:---------|
@@ -34,11 +28,9 @@ Chariot.clipboard.get()
 await __C.clipboard.get();
 ```
 
-## Chariot.clipboard.set {#set}
+## Chariot.clipboard.set(text) {#set}
 
 设置系统剪贴板的值（仅支持字符串）
-
-Chariot.clipboard.set(text)
 
 |  参数  | 类型     | 说明                   |
 |:----:|:-------|:---------------------|

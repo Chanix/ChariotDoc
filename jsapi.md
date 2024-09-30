@@ -21,16 +21,16 @@ Chariot 会在浏览器组件窗口装载完成之后新增一个对象： `wind
 例如下面几个是等价的调用：
 
 ```javascript
-window.Chariot.api.core.exit()
-Chariot.api.core.exit()
-__C.core.exit()
+window.Chariot.api.core.exit();
+Chariot.api.core.exit();
+__C.core.exit();
 ```
 
 如果 JavaScript 在准备工作还没有完成时进行调用，那么将会出现错误（例如：页面装载时立即执行的代码），可以通过侦听事件来解决这个问题。
 
 ```javascript
 window.addEventListener('ChariotReady', function () {
-    alert('Chariot 准备完毕，可以调用了。')
+    alert('Chariot 准备完毕，可以调用了。');
 })
 ```
 

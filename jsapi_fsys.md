@@ -2,9 +2,7 @@
 layout: doc
 ---
 
-# Chariot.fsys
-
-文件系统
+# 文件系统 Chariot.fsys
 
 本模块提供了一系列对文件和文件集合的高阶操作。
 特别是提供了一些支持文件拷贝和删除的函数。
@@ -15,11 +13,9 @@ layout: doc
 这意味着将丢失这些资源并且文件类型和创建者代码将不正确。
 在 Windows 上，将不会拷贝文件所有者、ACL 和替代数据流。
 
-## Chariot.fsys.isfile {#isfile}
+## Chariot.fsys.isfile(path) {#isfile}
 
 测试指定的文件是否为文件
-
-Chariot.fsys.isfile(path)
 
 |  参数  | 类型     | 说明   |
 |:----:|:-------|:-----|
@@ -33,11 +29,9 @@ Chariot.fsys.isfile(path)
 await __C.fsys.isfile('C:\\Windows\\notepad.exe');
 ```
 
-## Chariot.fsys.isdir {#isdir}
+## Chariot.fsys.isdir(path) {#isdir}
 
 测试指定的文件是否为目录
-
-Chariot.fsys.isdir(path)
 
 |  参数  | 类型     | 说明   |
 |:----:|:-------|:-----|
@@ -51,13 +45,11 @@ Chariot.fsys.isdir(path)
 await __C.fsys.isdir('C:\\Windows');
 ```
 
-## Chariot.fsys.sizeof {#sizeof}
+## Chariot.fsys.sizeof(path) {#sizeof}
 
 获取指定文件或者目录的字节数<br>
 如果是文件，返回文件字节数。如果是目录，将进行递归遍历和汇总。<br />
 ***注意：目录很多或包含大量小文件的情况下，会消耗大量 IO 操作。***
-
-Chariot.fsys.sizeof(path)
 
 |  参数  | 类型     | 说明        |
 |:----:|:-------|:----------|
@@ -71,11 +63,9 @@ Chariot.fsys.sizeof(path)
 await __C.fsys.sizeof('C:\\Windows\\notepad.exe');
 ```
 
-## Chariot.fsys.sizeoftostr {#sizeoftostr}
+## Chariot.fsys.sizeoftostr(bytes_length) {#sizeoftostr}
 
 获取文件字节数的人类可读版本
-
-Chariot.fsys.sizeoftostr(bytes_length)
 
 |      参数      | 类型     | 说明  |
 |:------------:|:-------|:----|
@@ -89,11 +79,9 @@ Chariot.fsys.sizeoftostr(bytes_length)
 await __C.fsys.sizeoftostr(await __C.fsys.sizeof('C:\\Windows\\notepad.exe'));
 ```
 
-## Chariot.fsys.read {#read}
+## Chariot.fsys.read(path, charset) {#read}
 
 将文件内容读入字符串
-
-Chariot.fsys.read(path, charset)
 
 |   参数    | 类型     | 说明                 |
 |:-------:|:-------|:-------------------|
@@ -108,11 +96,9 @@ Chariot.fsys.read(path, charset)
 await __C.fsys.read('C:\\Windows\\win.ini');
 ```
 
-## Chariot.fsys.readlines {#readlines}
+## Chariot.fsys.readlines(path, charset) {#readlines}
 
 将文件内容读取到字符串列表中
-
-Chariot.fsys.readlines(path, charset)
 
 |   参数    | 类型     | 说明                 |
 |:-------:|:-------|:-------------------|
@@ -127,11 +113,9 @@ Chariot.fsys.readlines(path, charset)
 await __C.fsys.readlines('C:\\Windows\\win.ini');
 ```
 
-## Chariot.fsys.write {#write}
+## Chariot.fsys.write(path, content, append, charset) {#write}
 
 将字符串内容写入文件
-
-Chariot.fsys.write(path, content, append, charset)
 
 |   参数    | 类型     | 说明                   |
 |:-------:|:-------|:---------------------|
@@ -149,11 +133,9 @@ await __C.fsys.write('D:\\jswrite.txt', 'this is 1st line\n');
 await __C.fsys.write('D:\\jswrite.txt', 'this is 2st line\n', true);
 ```
 
-## Chariot.fsys.writelines {#writelines}
+## Chariot.fsys.writelines(path, content, append, charset) {#writelines}
 
 将字符串内容写入文件
-
-Chariot.fsys.writelines(path, content, append, charset)
 
 |   参数    | 类型            | 说明                   |
 |:-------:|:--------------|:---------------------|
@@ -171,11 +153,9 @@ await __C.fsys.writelines('D:\\jswrite.txt', ['line1\n', 'line2\n', 'line3\n']);
 await __C.fsys.writelines('D:\\jswrite.txt', ['line4\n', 'line5\n', 'line6\n'], true);
 ```
 
-## Chariot.fsys.touch {#touch}
+## Chariot.fsys.touch(path) {#touch}
 
 实现类似于 UNIX “touch” 实用程序的行为
-
-Chariot.fsys.touch(path)
 
 |  参数  | 类型     | 说明        |
 |:----:|:-------|:----------|
@@ -189,12 +169,10 @@ await __C.fsys.touch('D:\\jstouch.txt');
 
 [//]: # (## Chariot.fsys.rmdir {#rmdir})
 
-## Chariot.fsys.rmtree {#rmtree}
+## Chariot.fsys.rmtree(path, ignore_errors) {#rmtree}
 
 删除一个完整的目录树<br />
 path 必须指向一个目录（但不能是一个目录的符号链接）。
-
-Chariot.fsys.rmtree(path, ignore_errors)
 
 |      参数       | 类型     | 说明                   |
 |:-------------:|:-------|:---------------------|
@@ -205,11 +183,9 @@ Chariot.fsys.rmtree(path, ignore_errors)
 await __C.fsys.rmtree('D:\\treetest');
 ```
 
-## Chariot.fsys.getsep {#getsep}
+## Chariot.fsys.getsep() {#getsep}
 
 获取指定环境变量中使用的分隔符
-
-Chariot.env.getsep()
 
 |  返回值   | 说明                   |
 |:------:|:---------------------|
@@ -219,11 +195,9 @@ Chariot.env.getsep()
 await __C.fsys.getsep();
 ```
 
-## Chariot.fsys.checksum {#checksum}
+## Chariot.fsys.checksum(path) {#checksum}
 
 计算指定文件的校验和
-
-Chariot.fsys.checksum(path)
 
 |  参数  | 类型     | 说明   |
 |:----:|:-------|:-----|
@@ -237,11 +211,9 @@ Chariot.fsys.checksum(path)
 await __C.fsys.checksum('C:\\Windows\\notepad.exe');
 ```
 
-## Chariot.fsys.crc32 {#crc32}
+## Chariot.fsys.crc32(path) {#crc32}
 
 计算指定文件的 CRC32 校验和
-
-Chariot.fsys.crc32(path)
 
 |  参数  | 类型     | 说明   |
 |:----:|:-------|:-----|
@@ -255,11 +227,9 @@ Chariot.fsys.crc32(path)
 await __C.fsys.crc32('C:\\Windows\\notepad.exe');
 ```
 
-## Chariot.fsys.diskusage {#diskusage}
+## Chariot.fsys.diskusage(path) {#diskusage}
 
 返回给定路径的磁盘使用统计数据
-
-Chariot.fsys.diskusage(path)
 
 |  参数  | 类型     | 说明   |
 |:----:|:-------|:-----|

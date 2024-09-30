@@ -2,15 +2,11 @@
 layout: doc
 ---
 
-# Chariot.env
+# 环境变量 Chariot.env
 
-环境变量
-
-## Chariot.env.set {#set}
+## Chariot.env.set(name, value) {#set}
 
 设置指定环境变量的值
-
-Chariot.env.set(name, value)
 
 |  参数名  | 类型     | 说明                          |
 |:-----:|:-------|:----------------------------|
@@ -24,11 +20,9 @@ await __C.env.set('nnn', null);     // 删除名称环境变量 nnn
 await __C.env.set('nnn');           // 删除名称环境变量 nnn
 ```
 
-## Chariot.env.get {#get}
+## Chariot.env.get(name, default) {#get}
 
 获取指定环境变量的值。
-
-Chariot.env.get(name, default)
 
 |   参数名   | 类型     | 说明               |
 |:-------:|:-------|:-----------------|
@@ -46,11 +40,9 @@ await __C.env.get('nnn', 12345);    // 获取环境变量 nnn，默认返回 "12
 await __C.env.get('nnn', "vvv");    // 获取环境变量 nnn，默认返回 "vvv"
 ```
 
-## Chariot.env.pop {#pop}
+## Chariot.env.pop(name, default) {#pop}
 
 删除指定环境变量，并返回其值。
-
-Chariot.env.pop(name, default)
 
 |   参数名   | 说明     | 默认值              |
 |:-------:|:-------|:-----------------|
@@ -68,25 +60,21 @@ await __C.env.pop('nnn', 12345);    // 获取环境变量 nnn，默认返回 "12
 await __C.env.pop('nnn', "vvv");    // 获取环境变量 nnn，默认返回 "vvv"
 ```
 
-## Chariot.env.list {#list}
+## Chariot.env.list() {#list}
 
 获取当前所有的环境变量列表
-
-Chariot.env.list()
 
 |  返回值   | 说明             |
 |:------:|:---------------|
 | object | 一个包含环境变量键值对的字典 |
 
 ```javascript
-env = await __C.env.list()
+env = await __C.env.list();
 ```
 
-## Chariot.env.getsep {#getsep}
+## Chariot.env.getsep() {#getsep}
 
 获取指定环境变量中使用的分隔符
-
-Chariot.env.getsep()
 
 |  返回值   | 说明                      |
 |:------:|:------------------------|

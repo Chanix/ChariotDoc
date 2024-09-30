@@ -2,25 +2,19 @@
 layout: doc
 ---
 
-# Chariot.core
+# 基础功能 Chariot.core
 
-基础功能
-
-## Chariot.core.exit {#exit}
+## Chariot.core.exit() {#exit}
 
 关闭所有窗口，正常退出。
-
-Chariot.core.exit()
 
 ```javascript
 __C.core.exit();
 ```
 
-## Chariot.core.terminate {#terminate}
+## Chariot.core.terminate(retcode) {#terminate}
 
 强制关闭，立即中止。
-
-Chariot.core.terminate(retcode);
 
 | 参数名     | 类型     | 说明              |
 |:--------|:-------|:----------------|
@@ -31,11 +25,9 @@ __C.core.terminate();       // 返回 0
 __C.core.terminate(1);      // 返回 1
 ```
 
-## Chariot.core.get_argv {#get_argv}
+## Chariot.core.get_argv(para) {#get_argv}
 
 获取执行 Chariot 时使用的命令行参数。
-
-Chariot.core.get_argv(para);
 
 | 参数   | 类型     | 说明                         |
 |:-----|:-------|:---------------------------|
@@ -53,45 +45,78 @@ await __C.core.get_argv(0);
 await __C.core.get_argv('project');
 ```
 
-## Chariot.core.exec {#exec}
+[//]: # (## Chariot.core.exec&#40;bin_name, parameters&#41; {#exec})
 
-运行一个可执行文件
+[//]: # ()
 
-Chariot.core.exec(bin_name, parameters)
+[//]: # (运行一个可执行文件)
 
-| 参数名        | 类型     | 说明         |
-|:-----------|:-------|:-----------|
-| bin_name   | string | 项目标识号      |   
-| parameters | string | 命令行参数，可忽略。 |   
+[//]: # ()
 
-| 返回值    | 说明      |
-|:-------|:--------|
-| number | 新实例的进程号 |
+[//]: # (| 参数名        | 类型     | 说明         |)
 
-```javascript
-await __C.core.exec('prjA');
-await __C.core.exec('prjA', '-p1 p1 /p2 p2 --p3 p3 --p4');
-```
+[//]: # (|:-----------|:-------|:-----------|)
 
-## Chariot.core.execwait {#execwait}
+[//]: # (| bin_name   | string | 项目标识号      |   )
 
-创建一个自动执行指定项目的 Chariot 实例，并等其运行完毕。<br />运行完毕后，返回运行结果信息。
+[//]: # (| parameters | string | 命令行参数，可忽略。 |   )
 
-Chariot.core.execwait(bin_name, parameters)
+[//]: # ()
 
-| 参数名        | 类型     | 说明         |
-|:-----------|:-------|:-----------|
-| bin_name   | string | 项目标识号      |   
-| parameters | string | 命令行参数，可忽略。 |   
+[//]: # (| 返回值    | 说明      |)
 
-| 返回值    | 说明                     |
-|:-------|:-----------------------|
-| object | 一个字典对象，其中：             |
-|        | retcode (number) 进程返回值 |
-|        | stdio (string) 标准输出    |
-|        | stderr (string) 标准错误   |
+[//]: # (|:-------|:--------|)
 
-```javascript
-await __C.core.execwait('prjA');
-await __C.core.execwait('prjA', '-p1 p1 /p2 p2 --p3 p3 --p4');
-```
+[//]: # (| number | 新实例的进程号 |)
+
+[//]: # ()
+
+[//]: # (```javascript)
+
+[//]: # (await __C.core.exec&#40;'prjA'&#41;;)
+
+[//]: # (await __C.core.exec&#40;'prjA', '-p1 p1 /p2 p2 --p3 p3 --p4'&#41;;)
+
+[//]: # (```)
+
+[//]: # ()
+
+[//]: # (## Chariot.core.execwait&#40;bin_name, parameters&#41; {#execwait})
+
+[//]: # ()
+
+[//]: # (创建一个自动执行指定项目的 Chariot 实例，并等其运行完毕。<br />运行完毕后，返回运行结果信息。)
+
+[//]: # ()
+
+[//]: # (| 参数名        | 类型     | 说明         |)
+
+[//]: # (|:-----------|:-------|:-----------|)
+
+[//]: # (| bin_name   | string | 项目标识号      |   )
+
+[//]: # (| parameters | string | 命令行参数，可忽略。 |   )
+
+[//]: # ()
+
+[//]: # (| 返回值    | 说明                     |)
+
+[//]: # (|:-------|:-----------------------|)
+
+[//]: # (| object | 一个字典对象，其中：             |)
+
+[//]: # (|        | retcode &#40;number&#41; 进程返回值 |)
+
+[//]: # (|        | stdio &#40;string&#41; 标准输出    |)
+
+[//]: # (|        | stderr &#40;string&#41; 标准错误   |)
+
+[//]: # ()
+
+[//]: # (```javascript)
+
+[//]: # (await __C.core.execwait&#40;'prjA'&#41;;)
+
+[//]: # (await __C.core.execwait&#40;'prjA', '-p1 p1 /p2 p2 --p3 p3 --p4'&#41;;)
+
+[//]: # (```)

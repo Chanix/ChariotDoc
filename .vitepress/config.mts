@@ -28,7 +28,7 @@ export default defineConfig({
 
         sidebar: [
             {
-                text: '简介',
+                text: 'Chariot 简介',
                 collapsed: false,
                 items: [
                     {text: '什么是 Chariot', link: '/what-is-chariot'},
@@ -37,7 +37,7 @@ export default defineConfig({
                 ],
             },
             {
-                text: '配置文件',
+                text: '约定和配置',
                 collapsed: false,
                 items: [
                     {text: 'project.json', link: '/project_json'},
@@ -49,11 +49,12 @@ export default defineConfig({
                 collapsed: false,
                 items: [
                     {text: 'JSAPI 概述', link: '/jsapi'},
-                    {text: '基础功能 Chariot.core', link: '/jsapi_core'},
-                    {text: '剪贴板　 Chariot.clipboard', link: '/jsapi_clipboard'},
-                    {text: '环境变量 Chariot.env', link: '/jsapi_env'},
-                    {text: '文件系统 Chariot.fsys', link: '/jsapi_fsys'},
-                    {text: '应用项目 Chariot.project', link: '/jsapi_project'},
+                    {text: '基础功能　　Chariot.core', link: '/jsapi_core'},
+                    {text: '剪贴板　　　Chariot.clipboard', link: '/jsapi_clipboard'},
+                    {text: '环境变量　　Chariot.env', link: '/jsapi_env'},
+                    {text: '文件系统　　Chariot.fsys', link: '/jsapi_fsys'},
+                    {text: '内存数据库　Chariot.memdb', link: '/jsapi_memdb'},
+                    {text: '应用项目　　Chariot.project', link: '/jsapi_project'},
                 ],
             },
         ],

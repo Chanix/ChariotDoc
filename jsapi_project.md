@@ -2,17 +2,13 @@
 layout: doc
 ---
 
-# Chariot.project
-
-应用项目
+# 应用项目 Chariot.project
 
 运行于 Chariot 上的应用，称之为应用项目，简称“项目”。本模块提供了一系列对项目操作的功能。
 
-## Chariot.project.get {#get}
+## Chariot.project.get(project_id) {#get}
 
 获取项目信息
-
-Chariot.project.get(project_id)
 
 |    参数名     | 说明     | 默认值   |
 |:----------:|:-------|:------|
@@ -26,11 +22,9 @@ Chariot.project.get(project_id)
 await __C.project.get('default');
 ```
 
-## Chariot.project.gethome {#gethome}
+## Chariot.project.gethome() {#gethome}
 
 获取项目主目录
-
-Chariot.project.gethome()
 
 | 返回值    | 说明      |
 |:-------|:--------|
@@ -40,11 +34,9 @@ Chariot.project.gethome()
 await __C.project.gethome();
 ```
 
-## Chariot.project.list {#list}
+## Chariot.project.list() {#list}
 
 获取已存在的项目列表
-
-Chariot.project.list()
 
 | 返回值           | 说明                 |
 |:--------------|:-------------------|
@@ -54,11 +46,9 @@ Chariot.project.list()
 await __C.project.list();
 ```
 
-## Chariot.project.run {#run}
+## Chariot.project.run(project_id, parameters) {#run}
 
 创建一个自动执行指定项目的 Chariot 实例。
-
-Chariot.project.run(project_id, parameters)
 
 | 参数名        | 类型     | 说明         |
 |:-----------|:-------|:-----------|
@@ -74,11 +64,9 @@ await __C.project.run('prjA');
 await __C.project.run('prjA', '-p1 p1 /p2 p2 --p3 p3 --p4');
 ```
 
-## Chariot.project.runwait {#runwait}
+## Chariot.project.runwait(project_id, parameters) {#runwait}
 
 创建一个自动执行指定项目的 Chariot 实例，并等其运行完毕。<br />运行完毕后，返回运行结果信息。
-
-Chariot.project.runwait(project_id, parameters)
 
 | 参数名        | 类型     | 说明         |
 |:-----------|:-------|:-----------|
