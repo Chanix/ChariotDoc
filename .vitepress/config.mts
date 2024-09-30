@@ -37,15 +37,17 @@ export default defineConfig({
                 ],
             },
             {
-                text: '约定和配置',
+                text: '开发者指南',
                 collapsed: false,
                 items: [
-                    {text: 'project.json', link: '/project_json'},
+                    {text: '文件与目录结构', link: '/dirs_and_files'},
+                    {text: '项目描述文件 project.json', link: '/project_json'},
+                    {text: '项目如何运行', link: '/project_load'},
                     // { text: 'lang.json', link: '/404' },
                 ],
             },
             {
-                text: 'JS 功能扩展',
+                text: 'JSAPI 手册',
                 collapsed: false,
                 items: [
                     {text: 'JSAPI 概述', link: '/jsapi'},
