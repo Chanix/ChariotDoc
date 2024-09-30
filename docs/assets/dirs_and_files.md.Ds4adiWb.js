@@ -1,0 +1,13 @@
+import{_ as s,c as n,a0 as e,o as p}from"./chunks/framework.Dz46SkuX.js";const _=JSON.parse('{"title":"文件与目录结构","description":"","frontmatter":{"layout":"doc"},"headers":[],"relativePath":"dirs_and_files.md","filePath":"dirs_and_files.md"}'),t={name:"dirs_and_files.md"};function i(l,a,o,r,c,d){return p(),n("div",null,a[0]||(a[0]=[e(`<h1 id="文件与目录结构" tabindex="-1">文件与目录结构 <a class="header-anchor" href="#文件与目录结构" aria-label="Permalink to &quot;文件与目录结构&quot;">​</a></h1><p>运行 Chariot 时所使用的目录，即为 “CHARIOT_HOME”。<br><em><strong>一般来说，CHARIOT_HOME 就是 Chariot 可执行文件所在的目录。</strong></em></p><h2 id="chariot-home" tabindex="-1">CHARIOT_HOME <a class="header-anchor" href="#chariot-home" aria-label="Permalink to &quot;CHARIOT_HOME&quot;">​</a></h2><div class="language-text vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">text</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>    CHARIOT_HOME</span></span>
+<span class="line"><span>        |   Chariot.exe         # 文件：可执行文件，运行环境</span></span>
+<span class="line"><span>        |   ChariotKit.exe      # 文件：可执行文件，开发调试环境</span></span>
+<span class="line"><span>        +---packages            # 目录：外部工具目录</span></span>
+<span class="line"><span>        |</span></span>
+<span class="line"><span>        +---temp                # 目录：临时文件目录（以项目标识为子目录）</span></span>
+<span class="line"><span>        +---data                # 目录：应用数据目录（以项目标识为子目录）</span></span>
+<span class="line"><span>        \\---projects            # 目录：应用项目目录（以项目标识为子目录）</span></span></code></pre></div><p>开发中，请按照这个约定来存储对应的文件。</p><p>发布给最终用户时，由于他们并不需要开发调试环境，因此可以删除 ChariotKit 。</p><h2 id="项目目录" tabindex="-1">项目目录 <a class="header-anchor" href="#项目目录" aria-label="Permalink to &quot;项目目录&quot;">​</a></h2><div class="language-text vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">text</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>    project_name                # 目录名即项目的标识，请尽量使用英语字符。</span></span>
+<span class="line"><span>        |   project.json        # 项目描述文件</span></span>
+<span class="line"><span>        |                       #   本文件详细记录了项目的相关信息，必须存在。</span></span>
+<span class="line"><span>        |                       #   当 Chariot 启动项目时会读取该文件。</span></span>
+<span class="line"><span>        \\---webroot             # 项目内使用的所有文件</span></span>
+<span class="line"><span>                                #   本地 httpd 服务器将以本目录作为 / 。</span></span></code></pre></div>`,8)]))}const m=s(t,[["render",i]]);export{_ as __pageData,m as default};
