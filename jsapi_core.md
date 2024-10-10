@@ -4,6 +4,24 @@ layout: doc
 
 # 基础功能 Chariot.core
 
+## Chariot.core.null() {#null}
+
+返回 null
+
+```javascript
+__C.core.null();
+```
+
+由于单纯的返回 null，除了通讯再无其他消耗。因此经常被作为通讯调试和性能测试工具。
+
+```javascript
+var tsStart = new Date().getTime();
+for (var i = 0; i < 100; i++) {
+    await __C.core.null();
+}
+console.log((new Date().getTime()) - tsStart);
+```
+
 ## Chariot.core.exit() {#exit}
 
 关闭所有窗口，正常退出。

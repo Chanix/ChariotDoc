@@ -41,13 +41,13 @@ export default defineConfig({
                 collapsed: false,
                 items: [
                     {text: '文件与目录结构', link: '/dirs_and_files'},
-                    {text: '项目描述文件 project.json', link: '/project_json'},
-                    {text: '项目如何运行', link: '/project_load'},
+                    {text: '项目描述文件', link: '/project_json'},
+                    {text: '装载和运行项目', link: '/project_load'},
                     // { text: 'lang.json', link: '/404' },
                 ],
             },
             {
-                text: 'JSAPI 手册',
+                text: 'JSAPI 参考手册',
                 collapsed: false,
                 items: [
                     {text: 'JSAPI 概述', link: '/jsapi'},

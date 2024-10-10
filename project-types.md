@@ -1,7 +1,7 @@
 ---
 layout: doc
 ---
-# 应用类型 {#project-types}
+# 项目运行模式 {#project-types}
 
 ## 全部后端，远程HTTPD
 此种模式下，和浏览器没什么区别，所有的代码都在后端。
